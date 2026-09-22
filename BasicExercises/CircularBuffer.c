@@ -7,7 +7,7 @@ typedef struct node
     struct node *next;
     struct node *prev;
 } node;
-
+// attempting circular buffer pointers will continue tomorrow
 node *left = NULL;
 node *right = NULL;
 node *new_node = NULL;

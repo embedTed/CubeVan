@@ -1,20 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct node
+typedef struct
 {
     int value;
     struct node *next;
     struct node *prev;
 } node;
-// attempting circular buffer pointers will continue tomorrow
-node *left = NULL;
-node *right = NULL;
-node *new_node = NULL;
 
+typedef struct
+{
+    int space;
+    int val;
+    node *left;
+    node *right;
+    node *next;
+    node *prev;
+} self;
+void init(self *c, int n)
+{
+    c->space = n;
+}
 int main()
 {
-    new_node = malloc(sizeof(node));
+    node *new_node = malloc(sizeof(node));
     if (new_node == NULL)
     {
         return 1;
